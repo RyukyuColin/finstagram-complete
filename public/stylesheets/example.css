@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: cyan;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+main {
+  margin-top: 7rem;
+}
+
+article {
+  
+}
+
+.news-author {
+  font-size: 19px;
+  font-style: italic;
+}
+
+.news-date {
+  font-size: 14px;
+  font-weight: 600;
+}
