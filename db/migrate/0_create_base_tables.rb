@@ -5,7 +5,7 @@ class CreateBaseTables < ActiveRecord::Migration
       t.string :username
       t.string :avatar_url
       t.string :email
-      t.string :password
+      t.string :password_digest
       t.timestamps
     end
 
