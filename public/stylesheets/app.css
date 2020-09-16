@@ -5,6 +5,7 @@ body {
 }
 
 header {
+  padding: 0 1rem;
   background-color: #244751;
   color: #E8FDFF;
 }

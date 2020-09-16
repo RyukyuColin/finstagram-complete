@@ -13,6 +13,10 @@ a {
   text-decoration: none;
 }
 
+form {
+  padding: 1rem;
+}
+
 label {
   display: block;
   margin-bottom: .25em;
