@@ -1,4 +1,8 @@
-<%= @error_message if @error_message %>
+<h2>Login to Finstagram</h2>
+
+<% if @error_message %>
+  <%= erb(:'shared/errors', { locals: { errors: [ @error_message ] } }) %>
+<% end %>
 
 <form action="/login" method="POST">
   <div class="form-group">

@@ -1,8 +1,6 @@
-<ul class="errors">
-  <% @user.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-</ul>
+<h2>Join Finstagram!</h2>
+
+<%= erb(:'shared/errors', { locals: { errors: @user.errors.full_messages } }) %>
 
 <form action="/signup" method="POST">
   <div class="form-group">
