@@ -82,7 +82,7 @@ post '/finstagram_posts' do
   end
 end
 
-# Route to show individual post
+# Route to display individual post
 get '/finstagram_posts/:id' do
   @finstagram_post = FinstagramPost.find(params[:id])
   erb(:"finstagram_posts/show")
