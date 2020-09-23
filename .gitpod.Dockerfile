@@ -1,10 +1,9 @@
 FROM gitpod/workspace-full
 
-USER root
+USER gitpod
 
-RUN npm i -g heroku
-
-RUN npm i -g prettier
+RUN npm i -g heroku \
+    npm i -g prettier
 
 # Install custom tools, runtime, etc. using apt-get
 # For example, the command below would install "bastet" - a command line tetris clone:
