@@ -5,3 +5,6 @@ image:
 ports:
   - port: 3000
     onOpen: open-browser
+
+tasks: 
+  - command: npm install -g heroku
