@@ -4,6 +4,10 @@ helpers do
   def current_user
     User.find_by(id: session[:user_id])
   end
+
+  def logged_in?
+    !!current_user
+  end
 end
 
 # --------- ROUTES ---------
@@ -19,6 +23,7 @@ get '/signup' do
   @user = User.new
   erb(:signup)
 end
+
 
 # Route to create new user
 post '/signup' do
@@ -63,6 +68,11 @@ get '/logout' do
   redirect to('/')
 end
 
+before '/finstagram_posts/new' do
+  # ensure user is logged in, if not, direct to login
+  redirect to('/login') unless logged_in?
+end
+
 # Route to form for new post
 get '/finstagram_posts/new' do
   @finstagram_post = FinstagramPost.new
@@ -86,6 +96,34 @@ end
 get '/finstagram_posts/:id' do
   @finstagram_post = FinstagramPost.find(params[:id])
   erb(:"finstagram_posts/show")
+end
+
+# Route to create a comment
+post '/comments' do
+  text = params[:text]
+  finstagram_post_id = params[:finstagram_post_id]
+
+  comment = Comment.new({ text: text, finstagram_post_id: finstagram_post_id, user_id: current_user.id })
+  comment.save
+
+  redirect(back)
+end
+
+# Route to like a post
+post '/likes' do
+  finstagram_post_id = params[:finstagram_post_id]
+
+  like = Like.new({ finstagram_post_id: finstagram_post_id, user_id: current_user.id })
+  like.save
+
+  redirect(back)
+end
+
+# Route to remove a like
+delete '/likes/:id' do
+  like = Like.find(params[:id])
+  like.destroy
+  redirect(back)
 end
 
 
