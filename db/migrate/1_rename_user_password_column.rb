@@ -1,4 +1,5 @@
-class RenameUserPasswordColumn < ActiveRecord::Migration
+class RenameUserPasswordColumn < ActiveRecord::Migration[5.2]
+
   def self.up
     rename_column :users, :password, :password_digest
   end
@@ -6,4 +7,5 @@ class RenameUserPasswordColumn < ActiveRecord::Migration
   def self.down
     # rename back if you need or do something else or do nothing
   end
+  
 end
