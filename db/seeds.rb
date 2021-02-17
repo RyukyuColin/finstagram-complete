@@ -1,13 +1,13 @@
 users = [
-  { username: "sharky_j", avatar_url: "http://naserca.com/images/sharky_j.jpg" },
-  { username: "kirk_whalum", avatar_url: "http://naserca.com/images/kirk_whalum.jpg" },
-  { username: "marlin_peppa", avatar_url: "http://naserca.com/images/marlin_peppa.jpg" }
+  { username: "sharky_j", avatar_url: "http://naserca.com/images/sharky_j.jpg", password_digest: User.digest('foobar') },
+  { username: "kirk_whalum", avatar_url: "http://naserca.com/images/kirk_whalum.jpg", password_digest: User.digest('foobar') },
+  { username: "marlin_peppa", avatar_url: "http://naserca.com/images/marlin_peppa.jpg", password_digest: User.digest('foobar') }
 ]
 
 finstagram_posts = [
-  "http://naserca.com/images/shark.jpg",
-  "http://naserca.com/images/whale.jpg",
-  "http://naserca.com/images/marlin.jpg"
+  { photo_url: "http://naserca.com/images/shark.jpg" },
+  { photo_url: "http://naserca.com/images/whale.jpg"},
+  { photo_url: "http://naserca.com/images/marlin.jpg"}
 ]
 
 users.each do |user|
