@@ -15,8 +15,10 @@ users.each do |user|
 end
 
 finstagram_posts.each_index do |i|
-  user = User.find_by(username: users[i].username)
-  finstagram_post = { photo_url: finstagram_posts[i], user_id: user.id }
-
-  FinstagramPost.create(finstagram_post)
+  user = User.find_by(username: users[i]["username"])
+  
+  if user
+    finstagram_post = { photo_url: finstagram_posts[i], user_id: user.id }
+    FinstagramPost.create(finstagram_post)
+  end
 end
