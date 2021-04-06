@@ -1,4 +1,4 @@
-# finstagram
+# Finstagram
 
 
 Welcome to the Lighthouse labs web fundamentals project! 
